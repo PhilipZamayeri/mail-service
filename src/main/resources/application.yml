@@ -1,0 +1,6 @@
+spring:
+  sendgrid:
+    api-key: ${spring.sendgrid.api-key}
+server:
+  error:
+    include-message: always
