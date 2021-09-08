@@ -35,7 +35,7 @@ public class EmailService {
         Email from = new Email("hakimlivsonline@gmail.com");
         Email to = new Email(email); // use your own email address here
 
-        String subject = "Sending with Twilio SendGrid is Fun";
+        String subject = "Kära kund";
         Content content = new Content("text/html", "Tack för att du valt att handla hos Hakim Livs");
 
         Mail mail = new Mail(from, subject, to, content);
