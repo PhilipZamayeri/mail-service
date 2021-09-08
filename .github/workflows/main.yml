@@ -20,4 +20,4 @@ jobs:
         #kör skriptet en gång och när det funkar kommentera bort variablerna
         env:
 
-          HD_spring.sendgrid.api-key: ${{secrets.TWILIO_TOKEN}}
+          HD_spring.sendgrid.api-key: ${{secrets.TWILIO_ACCOUNT_SID}}
