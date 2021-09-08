@@ -19,7 +19,7 @@ public class EmailSend {
         this.sender = "hakimlivsonline@gmail.com";
         this.subject = "Välkommen till Hakimlivs!";
 //        this.message = "Tack för ditt köp!";
-        this.content = new Content("text/html", "and <em>easy</em> to do anywhere with <strong>Java</strong>");
+        this.content = new Content("text/html", "Tack för att du valt att handla hos Hakim Livs");
     }
 
 }
