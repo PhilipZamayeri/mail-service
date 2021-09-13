@@ -89,11 +89,12 @@ public class EmailService {
 
     private static String printList(List<Products> productsList){
         String products = "";
+        int nr = 1;
 
         for (Products p : productsList){
-            products += p + "\n";
+            products += nr++ + ". " + p + " kr <br>";
         }
-        return products;
+        return "Din order: " + "<br>" + products;
     }
 
 
