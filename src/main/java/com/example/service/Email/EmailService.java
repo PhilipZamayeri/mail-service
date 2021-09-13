@@ -43,7 +43,6 @@ public class EmailService {
 
         Mail mail = new Mail(from, subject, to, content);
 
-
         Request request = new Request();
 
         request.setMethod(Method.POST);
@@ -61,15 +60,16 @@ public class EmailService {
     }
 
     public void sendEmailOrderObj(CustomerOrder order) throws IOException {
-        System.out.println(printList(order.getProductsList()));
+//        System.out.println(printList(order.getProductsList()));
+//        System.out.println(order.getCustomer().toString());
+        String orderToMail = customerToEmail(order) + printList(order.getProductsList());
 
         Email from = new Email("hakimlivsonline@gmail.com");
         Email to = new Email(order.getCustomer().getEmail());
 
         String subject = "Tack för din beställning!";
 //        Content content = new Content("text/html", "Tack för att du valt att handla hos Hakim Livs");
-        Content content = new Content("text/html", printList(order.getProductsList()));
-
+        Content content = new Content("text/html", orderToMail);
 
         Mail mail = new Mail(from, subject, to, content);
 
@@ -94,8 +94,16 @@ public class EmailService {
         for (Products p : productsList){
             products += nr++ + ". " + p + " kr <br>";
         }
-        return "Din order: " + "<br>" + products;
+        return "<br>Din order: " + "<br>" + products;
     }
 
+    private static String customerToEmail(CustomerOrder customer){
+        return "Kunduppgifter: " + "<br>" +
+                customer.getCustomer().getFirstName() + " " + customer.getCustomer().getLastName() + "<br>" +
+                customer.getCustomer().getEmail() + "<br>" +
+                customer.getCustomer().getPhoneNumber() + "<br>" +
+                customer.getCustomer().getCity()+ "<br>" +
+                customer.getCustomer().getCity() + "<br>";
+    }
 
 }
