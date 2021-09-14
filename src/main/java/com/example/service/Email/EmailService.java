@@ -102,8 +102,9 @@ public class EmailService {
                 customer.getCustomer().getFirstName() + " " + customer.getCustomer().getLastName() + "<br>" +
                 customer.getCustomer().getEmail() + "<br>" +
                 customer.getCustomer().getPhoneNumber() + "<br>" +
+                customer.getCustomer().getAdress() + "<br>" +
                 customer.getCustomer().getCity()+ "<br>" +
-                customer.getCustomer().getCity() + "<br>";
+                customer.getCustomer().getZipcode() + "<br>";
     }
 
 }
