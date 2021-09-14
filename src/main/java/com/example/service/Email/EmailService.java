@@ -59,7 +59,7 @@ public class EmailService {
 
     }
 
-    public String sendEmailOrderObj(CustomerOrder order) throws IOException {
+    public void sendEmailOrderObj(CustomerOrder order) throws IOException {
 
         String orderToMail = customerToEmail(order) + printList(order.getProductsList());
 
@@ -82,8 +82,6 @@ public class EmailService {
         System.out.println(response.getStatusCode());
         System.out.println(response.getHeaders());
         System.out.println(response.getBody());
-
-        return "Email sent";
     }
 
     private String printList(List<Products> productsList){
