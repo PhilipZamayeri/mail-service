@@ -26,8 +26,9 @@ public class EmailController {
     }
 
     @PostMapping("/sendObj")
-    public void sendEmailOrder(@RequestBody CustomerOrder order) throws IOException {
-
+    public String sendEmailOrder(@RequestBody CustomerOrder order) throws IOException {
         emailService.sendEmailOrderObj(order);
+        return "Order confirmation sent";
+
     }
 }
