@@ -4,18 +4,18 @@ public class Customer {
     private final String firstName;
     private final String lastName;
     private final String email;
-
     private final City city;
+    private final String adress;
+    private final String zipCode;
+    private final String phoneNumber;
 
-    private String zipcode;
-    private String phoneNumber;
-
-    public Customer(String firstName, String lastName, String email, City city, String zipcode, String phoneNumber) {
+    public Customer(String firstName, String lastName, String email, City city, String adress, String zipCode, String phoneNumber) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.city = city;
-        this.zipcode = zipcode;
+        this.adress = adress;
+        this.zipCode = zipCode;
         this.phoneNumber = phoneNumber;
     }
 
@@ -35,8 +35,12 @@ public class Customer {
         return city;
     }
 
+    public String getAdress() {
+        return adress;
+    }
+
     public String getZipcode() {
-        return zipcode;
+        return zipCode;
     }
 
     public String getPhoneNumber() {
